@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2/3</title>
+
+    <script>
+
+        /*3) Informe dois valores, retorne os valores entre os números informados, 
+        exemplo: 7 a 12 exiba: 7 8 9 10 11 12*/
+
+        //informe o valor
+        var valor1 = parseInt(prompt("Informe um valor."))
+        var valor2  = parseInt(prompt("Informe um segundo valor."))
+
+        if (valor1 <= valor2){
+            while(valor1<= valor2){
+                document.write(valor1 + "<br>")
+                valor1 ++
+            }
+        }else{
+            while(valor1>=valor2){
+                document.write(valor1 + "<br>")
+                valor1 --
+            }
+        }
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

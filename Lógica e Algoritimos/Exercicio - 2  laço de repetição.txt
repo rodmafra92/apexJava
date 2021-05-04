@@ -1,0 +1,12 @@
+Atividades de laço de repetição
+
+1) Criar um sistema onde o usuário informa um número, em seguida retorne a tabuada daquele valor.
+
+2) Informe um número, retorne os dez antecessores e os dez sucessores.
+
+3) Informe dois valores, retorne os valores entre os números informados, exemplo: 7 a 12 exiba: 7 8 9 10 11 12
+
+4) Peça valores até que o usuário informe zero, em seguida exiba a soma dos valores.
+
+5) Informe dois valores, retorne os valores entre os números informados, exemplo: 4 a 9, exiba: 4 5 6 7 8 9.
+Informe quantos números são pares, ímpares, positivos e negativos.

@@ -1,0 +1,45 @@
+Atividades
+
+1) Peça um nome e uma idade, em seguida retorne uma frase com essas informações, exemplo:
+Nome: Mariana
+Idade: 17
+Olá Mariana, você tem 17 anos.
+
+2) Criar um sistema, onde seja informado o nome, idade e cidade. Monte uma frase contendo essas informações.
+
+3) Peça dois números, retorne a soma desses valores.
+
+4) Peça dois números, se forem iguais faça a soma, caso contrário faça a multiplicação.
+
+5) Peça três notas, retorne a média obtida e a situação (7 ou mais aprovado, caso contrário reprovado).
+Estrutura do cálculo: (nota1 + nota2 + nota3) / 3
+
+6) Criar um sistema pra converter moedas. Informe se a conversão será de Real para Dólar ou Dólar para Real, em seguida informe o valor e retorno a conversão. Vamos usar como base a cotação no valor de R$5,50.
+Sendo assim, caso seja informado o valor de R$1,00 e a opção dólar para real retornará R$5,50.
+Outro exemplo, se informado R$5,50 de real para dólar, o retorno será de: US1,00
+
+7) Peça um número, retorno o antecessor e o sucessor daquele número
+
+8) Peça três números, retorne o maior dos três
+
+9) Será desenvolvido um algoritmo para auxiliar a polícia de trânsito a averiguar as possíveis infrações, para isso peça os seguintes dados: Velocidade da pista e velocidade do veículo.
+Se a velocidade do veículo for menor ou igual a velocidade da pista, retorno bom motorista.
+Se a velocidade ultrapassar 10km/h haverá uma multa de R$50,00
+Se a velocidade estiver entre 10.1km/h até 20km/h haverá uma multa de R$100,00
+Se a velocidade for superior a 20km/h a multa será de R$200,00
+
+10) Informe um número, em seguida faça a tabuada daquele número. Não utilize laços de repetição (while, do-while ou for).
+
+11) O usuário informa um número, retorne se é um número positivo ou negativo.
+
+12) Crie uma lista com três países, informe a hora atual, retorne o horário daquele país.
+Exemplo: 19 horário de Brasília
+Inglaterra: 22 horas
+Japão: 07 horas
+México: 16 horas
+
+13) Implemente um pequeno sistema onde o cliente informa a temperatura atual e a conversão que pode ser entre Celsius para Fahrenheit ou Farenheit para Celsius.
+
+14) Listar cinco cidades de sua preferência, ao selecionar exiba uma descrição daquela cidade.
+
+15) Crie um sistema, onde o cliente informa o salário recebido. Em seguida pergunte os valores a serem pagos sobre: conta de luz, telefone, água, mercado, lazer e aluguel. Retorne quanto irá sobrar do seu salário.

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+        <script>
+
+        /*Crie um sistema, onde o cliente informa o salário recebido. 
+        Em seguida pergunte os valores a serem pagos sobre: conta de luz, telefone, água, mercado, lazer e aluguel. Retorne quanto irá sobrar do seu salário*/
+
+            var salario = parseInt(prompt("Insira o seu salário."))
+            var luz = parseInt(prompt("Insira o valor da conta de luz."))
+            var tel = parseInt(prompt("Insira o valor da conta de telefone."))
+            var agua = parseInt(prompt("Insira o valor da conta de água."))
+            var mercado = parseInt(prompt("Insira o valor da conta do mercado."))
+            var lazer = parseInt(prompt("Insira o valor gasto em lazer."))
+            var aluguel = parseInt(prompt("Insira o valor pago em aluguel."))
+            var restante = parseInt(salario-luz-tel-agua-mercado-lazer-aluguel)
+            alert("Após pagar todas as despesas sobrou "+restante+" do seu salário.")
+
+        </script>
+</head>
+<body>
+    
+</body>
+</html>

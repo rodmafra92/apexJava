@@ -1,0 +1,7 @@
+1)Armazenar cinco números, em seguida retorne a soma e liste os valores.
+
+2)informe dez números, em seguida exiba em ordem contrária.
+
+3)O usuário informa cinco números. Retorne a posição de todos os números 10, 
+caso não tenha sido informado o número 10 retorne : O número 10 não foi informado.
+

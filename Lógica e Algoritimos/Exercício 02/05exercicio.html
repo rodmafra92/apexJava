@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5/2</title>
+
+
+    <script>
+
+        var numero1 = parseInt(prompt("Informe um número"))
+        var numero2 = parseInt(prompt("Informe outro número."))
+
+        var pares = 0, impares = 0, positivos = 0, negativos = 0
+
+        if(numero1<numero2){
+            while(numero1<=numero2){
+
+                if(numero1 % 2 == 0){
+                pares ++
+            }else{
+                impares++
+            }
+            
+        numero1 ++
+        }
+
+        if(numero1 <0){
+            negativos++
+        }else{
+            positivos++
+        }
+        document.write(numero1 + "<br>")
+    
+    }else{
+        while(numero1 >= numero2){
+            if(numero1 % 2 == 0){
+                pares++
+            }else{
+                impares++
+            }
+            if (numero1<0){
+                negativos++
+            }else{
+                positivos++
+            }
+            document.write(numero + "<br>")
+            numero1--
+            
+        }
+    }
+    document.write("<hr>")
+    document.write("Positivs: "+positivos + "<br>")
+    document.write("Negativos: "+ negativos + "<br>")
+    document.write("Pares: "+ pares + "<br>")
+    document.write("Ímpares': "+impares)
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

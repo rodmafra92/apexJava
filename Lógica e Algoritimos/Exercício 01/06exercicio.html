@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotação do Dolar</title>
+
+    <script>
+
+        var moeda = (prompt("Bem vindo! Escolha a moeda a ser convertida. \n 1- Real \n 2- Dolar"))
+        //var real = parseInt(prompt("Ensira aqui o valor em reais(R$)."))
+        
+       // var dol = parseFloat(real/5.5)
+       // alert("Você possui "+(dol.toFixed(2))+" em dolares.")
+
+       var valor = prompt("Insira o valor desejado:")
+
+       if (moeda==1){
+        alert("U$ "+(valor/5.5).toFixed(2))
+       }else{
+           alert("R$"+(valor*5.5).toFixed(2))
+       }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
