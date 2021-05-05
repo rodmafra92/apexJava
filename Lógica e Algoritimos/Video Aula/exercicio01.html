@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01 </title>
+
+
+            <!--JS-->
+
+    <script>
+
+        function acao(){
+            
+            //capturar notas
+            var nota1 = parseFloat(document.getElementById("nota1").value)
+            var nota2 = parseFloat(document.getElementById("nota2").value)
+            var nota3 = parseFloat(document.getElementById("nota3").value)
+
+            // media
+            var media =(nota1+nota2+nota3)/3
+
+            //situação
+
+            var situacao = media >=7 ? "Aprovado(a)" : "Reprovado(a)"
+
+            // var situacao = "Aprovado(a)"
+
+            // if(media <7){
+            //     situacao = "Reprovado(a)"
+            // }
+            
+            // if(media>=7){
+            //     situacao ="Aprovado(a)"
+            // }else{
+            //     situacao ="Reprovado(a)"
+            // }
+
+            //mensagem
+            document.getElementById("mensagem").innerHTML = situacao+" com média "+media+"."
+        }
+
+
+
+
+    </script>
+
+</head>
+<body>
+    
+    <form>
+         <input type="texto" placeholder="Primeira Nota" id="nota1">
+         <input type="texto" placeholder="Segunda Nota" id="nota2">
+         <input type="texto" placeholder="Terceira Nota" id="nota3">
+         <input type="button" value="Enviar" onclick="acao()">
+
+         <h1 id="mensagem"></h1>
+
+    </form>
+
+</body>
+</html>
