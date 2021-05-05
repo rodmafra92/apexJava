@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+
+
+    <script>
+        function acao(){
+            var nota1 = parseFloat(document.getElementById("nota1").value)
+            var nota2 = parseFloat(document.getElementById("nota2").value)
+            var nota3 = parseFloat(document.getElementById("nota3").value)
+
+            var media = (nota1+nota2+nota3)/3
+
+            var situacao
+            
+            
+            if(media>=7){
+                situacao = ("Aprovado")
+            }else if(media >= 5){ 
+                situacao = ("Em exame")    
+            }else{
+                situacao = ("Reprovado")
+            }
+
+            document.getElementById("mensagem").innerHTML = situacao + " com média "+ media + "."
+        } 
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+    
+    <input type="texto" placeholder="Primeira nota" id="nota1">
+    <input type="texto" placeholder="Segunda nota" id="nota2">
+    <input type="texto" placeholder="Terceira nota" id="nota3">
+    <input type="button" value="Calcular" onclick="acao()">
+
+    <h1 id="mensagem"></h1>
+</body>
+</html>
