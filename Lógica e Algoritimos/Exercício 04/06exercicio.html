@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6/4</title>
+
+    <script>
+
+        /*Peça cinco números e armazene em um vetor.
+ Não poderá haver números repetidos, sendo assim caso o usuário tente cadastrar um valor que já esteja no vetor,
+ esse valor não poderá ser cadastrado. Obtendo os cinco números, exiba cada um deles e informe a soma.*/
+
+        var soma = 0
+
+        var numeros = []
+
+        var existe = false
+
+        var indice = 0
+        
+        do{
+
+            existe = false
+
+            var n =  parseInt(prompt("Informe o "+(indice+1)+"º número."))
+
+            for(var i=0;i<numeros.length; i++){
+                if(numeros[i]==n)
+                existe = true
+            }
+        
+        
+        if(existe == true){
+            alert("O numero informado já existe, tente outro numero.")
+        }else{
+            numeros[indice]=n
+            indice++
+        }
+        }while(indice<5)
+
+
+
+        // Obter numeros
+        
+        // for(var indice=0; indice<5; indice++){
+        //     numeros.push(parseInt(prompt("Informe o "+(indice+1)+"º número.")))
+        // }
+        
+        for(var indice=0; indice<5; indice ++){
+            soma+= numeros[indice]
+        }
+        for(var indice=0; indice<numeros.length; indice ++){
+            document.write(numeros[indice]+"<hr>")
+        }
+        document.write("A soma dos valores é "+ soma)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

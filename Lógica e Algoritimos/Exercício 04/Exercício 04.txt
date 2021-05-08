@@ -1,0 +1,52 @@
+1) Peça o nome de um produto, forma de pagamento (a vista ou a prazo) e o valor. 
+Se o valor do produto for maior ou igual a R$500,00, haverá um desconto de 10%, caso contrário não haverá desconto.
+ Retorne uma mensagem informado o nome do produto e o valor a ser pago.
+
+2) Peça um ano, retorne se é um ano bissexto ou não.
+
+3) Informe quatro lados (números inteiros), especifique se o objeto é um quadrado ou não.
+
+4) Peça três lados de um triângulo e retorne o tipo:
+Isósceles: possui dois lados iguais e um diferente
+Escaleno: possui todos os lados diferentes
+Eqüilátero: possui três lados iguais
+
+5) Tendo como base o mês de maio de 2021,
+ o usuário informa um dia entre 1 e 31 (valide caso informe qualquer numero diferente do intervalo),
+ retorne o dia da semana.
+
+6) Peça cinco números e armazene em um vetor.
+ Não poderá haver números repetidos, sendo assim caso o usuário tente cadastrar um valor que já esteja no vetor,
+ esse valor não poderá ser cadastrado. Obtendo os cinco números, exiba cada um deles e informe a soma.
+
+7) Crie um jogo onde o computador gera um número aleatório entre 1 e 100.
+ Sempre que o competidor informar um número, dê um feedback sobre o valor informado e o gerado, exemplo:
+
+Caso acerte: Acertou!
+Até 5 números de diferença: Quase
+Entre 6 e 10: Longe
+Entre 11 e 15: Muito longe
+Acima de 15: Extremamente longe!!!
+
+Quando acertar, informe a seguinte mensagem, dependendo do números de erros:
+0 - De primeira!
+1 a 4 - Foi bom.
+5 a 9 - Que tal tentar de novo?
+Acima de 9 - Tem que melhorar bastante
+
+Para fazer o número aleatório de 1 a 100 utilize a seguinte função:
+var numeroAleatorio = (Math.random() * 99) + 1
+
+8) Crie um sistema, onde o usuário cadastra: Nome do aluno e três notas. 
+Exiba em uma tabela o nome, as três notas, a média e a situação (aprovado ou reprovado)
+
+9) Implemente um jogo da forca com a palavra ESTUDAR
+
+10) O usuário informa um número, faça a multiplicação desse número com o antecessor,
+ em seguida faça o resultado com o outro antecessor, até que chega a 1, exemplo:
+Número informado: 5
+
+5 * 4 = 20
+20 * 3 = 60
+60 * 2 = 120
+120 * 1 = 120

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1/4</title>
+
+    <script>
+        /*1) Peça o nome de um produto, forma de pagamento (a vista ou a prazo) e o valor. 
+Se o valor do produto for maior ou igual a R$500,00, haverá um desconto de 10%, caso contrário não haverá desconto.
+ Retorne uma mensagem informado o nome do produto e o valor a ser pago.*/
+
+        function acao(){
+
+            var valor = parseFloat(document.getElementById("valor").value)
+            var forma = document.getElementById("forma").value
+
+            
+
+            if(forma == "vista" && valor >= 500)
+                valor = (valor*0.9)
+
+
+            document.getElementById("mensagem").innerHTML = "Total a pagar R$"+valor
+        }
+   
+
+    </script>
+</head>
+<body>
+
+    <form>
+        <input type="texto" placeholder="Qual é o produto?" id="produto">
+        <input type="texto" placeholder="Qual é o valor?" id="valor">
+        <input type="texto" placeholder="A vista ou a prazo?" id="forma">
+        <input type="button" value="Enviar" onclick="acao()">
+
+        <h1 id="mensagem"></h1>
+
+    </form>
+    
+</body>
+</html>
