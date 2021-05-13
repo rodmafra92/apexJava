@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7/4</title>
+
+    <script>
+
+        //Gerar número
+        var numeroAleatorio = ((Math.random()*99)+1).toFixed(0)
+
+        //Variavel para armazenar o número informado pelo jogador
+        var palpite
+
+        //Contador (quando entrar no laço, incrementa +1)
+        var contador = -1
+
+        //laço
+        do{
+
+            //incremento
+            contador++
+
+            //Pede palpite
+            palpite=parseInt(prompt("Informe um número entre 1 a 100."))
+
+            //Verifica a diferença entre o palpite e o número gerado
+            var resto = 0
+
+            if(palpite > numeroAleatorio){
+                resto=palpite - numeroAleatorio
+            }else if(palpite < numeroAleatorio){
+                resto=numeroAleatorio-palpite
+            }
+
+            //Dica
+            if(resto >=1 && resto <=5){
+                alert("Quase")
+            }else if(resto >=6 && resto<=10){
+                alert("Longe")
+            }else if(resto >=11 && resto<=15){
+                alert("Muito Longe")
+            }else if(resto > 15){
+                alert("Extremamente longe")
+            }
+
+        }while(palpite != numeroAleatorio)
+
+        //quando finalizar o jogo
+        if(contador ==0){
+            alert("De Primeira!")
+        }else if(contador<=4){
+            alert("Foi bem!")
+        }else if(contador<=9){
+            alert("Que tal tentar de novo?")
+        }else{
+            alert("Tem que melhorar bastante")
+        }
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

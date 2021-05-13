@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10/4</title>
+
+    <script>
+
+        //Obter número
+        var numero = parseInt(prompt("Informe um número"))
+
+        //Calculo
+        var Calculo
+
+        // Laço
+        for(var indice=numero -1; indice >0;indice--){
+
+            //se for o primeiro loop
+            if(indice == numero -1){
+                calculo = numero*indice
+                document.write(numero + " x " + indice + " = " + calculo+ "<br>")
+            }else{
+                calculo *=indice
+                document.write(numero + " x " + indice + " = " + calculo + "<br>")
+
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
