@@ -4,7 +4,7 @@ CREATE TABLE alunos(
     nota1 DOUBLE,
     nota2 DOUBLE 
 );
- <---comentario-->
+
 INSERT INTO alunos VALUES
     ("Ana", 15, 7.5, 8.2),
     ("Lucas", null, 9, 8.6),
