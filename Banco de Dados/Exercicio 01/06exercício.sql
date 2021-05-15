@@ -1,0 +1,11 @@
+CREATE TABLE autores(
+    idAutor INT AUTO_INCREMENT PRIMARY KEY,
+    nomeAutor VARCHAR (50)
+);
+
+CREATE TABLE generos(
+    idGenero INT AUTO_INCREMENT PRIMARY KEY,
+    nomeGenero VARCHAR(30)
+);
+
+CREATE TABLE 
