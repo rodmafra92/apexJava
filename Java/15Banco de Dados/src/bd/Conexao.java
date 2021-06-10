@@ -10,7 +10,7 @@ public class Conexao {
 	
 	// Atributos para efetuar conexão
 	private static final String usuario = "root";
-	private static final String senha = "digo9656";
+	private static final String senha = "root102030";
 	private static final String base = "java";
 	private static final String timeZone = "?useTimezone=true&serverTimezone=UTC";
 	
