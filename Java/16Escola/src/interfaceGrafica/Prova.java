@@ -6,7 +6,12 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import controle.ProvaControle;
+import modelo.UsuarioModelo;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.JButton;
@@ -17,12 +22,12 @@ import java.awt.event.ActionEvent;
 public class Prova extends JFrame {
 
 	private JPanel txtNumero;
-	private JTextField textField;
+	private JTextField txtProva;
 
 	/**
 	 * Create the frame.
 	 */
-	public Prova() {
+	public Prova(UsuarioModelo um) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 297, 192);
 		txtNumero = new JPanel();
@@ -35,12 +40,31 @@ public class Prova extends JFrame {
 		lblNewLabel.setBounds(31, 87, 87, 13);
 		txtNumero.add(lblNewLabel);
 		
-		textField = new JTextField();
-		textField.setBounds(82, 86, 177, 19);
-		txtNumero.add(textField);
-		textField.setColumns(10);
+		txtProva = new JTextField();
+		txtProva.setBounds(82, 86, 177, 19);
+		txtNumero.add(txtProva);
+		txtProva.setColumns(10);
 		
 		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// Obter dados
+				String nomeProva = txtProva.getText();
+				int codigoProfessor = um.getCodigo();
+				
+				// Cadastrar no banco de dados
+				boolean status = ProvaControle.cadastrar(codigoProfessor, nomeProva);
+				JOptionPane.showMessageDialog(null, status == true ? "Prova cadastrada." : "Falha ao cadastrar." );
+				
+				// Limpar os campos
+				txtProva.setText("");
+				
+				// Cursor no campo
+				txtProva.requestFocus();
+				
+			}
+		});
 		btnCadastrar.setBounds(27, 110, 85, 21);
 		txtNumero.add(btnCadastrar);
 		
@@ -51,8 +75,8 @@ public class Prova extends JFrame {
 				dispose();
 				
 				// Exibir o JFrame Professor
-				Professor a = new Professor();
-				a.setVisible(true);
+				Professor p = new Professor(um);
+				p.setVisible(true);
 			}
 		});
 		btnCancelar.setBounds(174, 110, 85, 21);

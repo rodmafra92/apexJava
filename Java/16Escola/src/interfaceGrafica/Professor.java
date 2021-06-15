@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import modelo.UsuarioModelo;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -21,7 +24,7 @@ public class Professor extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Professor() {
+	public Professor(UsuarioModelo um) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 650, 300);
 		contentPane = new JPanel();
@@ -29,7 +32,7 @@ public class Professor extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblBoaNoiteProfessor = new JLabel("Boa noite Professor.");
+		JLabel lblBoaNoiteProfessor = new JLabel("Boa noite Professor " + um.getNome());
 		lblBoaNoiteProfessor.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblBoaNoiteProfessor.setBounds(10, 10, 199, 33);
 		contentPane.add(lblBoaNoiteProfessor);
@@ -47,7 +50,7 @@ public class Professor extends JFrame {
 				dispose();
 				
 				// Exibir o JFrame Prova
-				Prova a = new Prova();
+				Prova a = new Prova(um);
 				a.setVisible(true);
 			}
 		});
@@ -63,7 +66,7 @@ public class Professor extends JFrame {
 				dispose();
 				
 				// Exibir o JFrame Login
-				Notas a = new Notas();
+				Notas a = new Notas(um);
 				a.setVisible(true);
 			}
 		});

@@ -6,7 +6,12 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import controle.UsuarioControle;
+import modelo.UsuarioModelo;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
@@ -31,7 +36,7 @@ public class Usuarios extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Usuarios() {
+	public Usuarios(UsuarioModelo um) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 382);
 		contentPane = new JPanel();
@@ -113,12 +118,56 @@ public class Usuarios extends JFrame {
 		JComboBox<String> cbxTipo = new JComboBox<String>();
 		cbxTipo.addItem("Tipo de conta");
 		cbxTipo.addItem("Administrador");
-		cbxTipo.addItem("Aluno");
 		cbxTipo.addItem("Professor");
+		cbxTipo.addItem("Aluno");
 		cbxTipo.setBounds(10, 264, 416, 19);
 		contentPane.add(cbxTipo);
 		
 		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				// Tentativa
+				try {
+					
+					// Obterdados
+					String nome = txtNome.getText();
+					String email = txtEmail.getText();
+					String senha = String.valueOf(pswSenha.getPassword());
+					String bairro = txtBairro.getText();
+					String rua = txtRua.getText();
+					int numero = Integer.parseInt(txtNumero.getText());
+					String complemento = txtComplemento.getText();
+					String telefone = txtTelefone.getText();
+					int tipo = cbxTipo.getSelectedIndex();
+					
+					// Criar objeto do tipo UsuarioModelo
+					UsuarioModelo um = new UsuarioModelo(nome, senha, email, bairro, rua, numero, complemento, telefone, tipo);
+							
+					// Cadastrar usuário
+					boolean status = UsuarioControle.cadastrar(um);
+					
+					// Mensagem
+					JOptionPane.showMessageDialog(btnCadastrar, status==true? "Cadastro realizado com sucesso!" : "Falha ao cadastrar.");
+					
+					// Limpar campos
+					txtNome.setText("");
+					txtEmail.setText("");
+					pswSenha.setText("");
+					txtBairro.setText("");
+					txtRua.setText("");
+					txtNumero.setText("");
+					txtComplemento.setText("");
+					txtTelefone.setText("");
+					cbxTipo.setSelectedIndex(0);
+					
+					// Cursor no campo nome
+					txtNome.requestFocus();
+				}catch(Exception erro) {}
+				
+			}
+		});
 		btnCadastrar.setBounds(56, 303, 96, 32);
 		contentPane.add(btnCadastrar);
 		
@@ -129,8 +178,8 @@ public class Usuarios extends JFrame {
 				// Fechar o JFrame
 				dispose();
 				
-				// Exibir o JFrame Professor
-				Administrador a = new Administrador();
+				// Exibir o JFrame Administrador
+				Administrador a = new Administrador(um);
 				a.setVisible(true);
 			}
 		});
