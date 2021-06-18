@@ -4,6 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import javax.swing.table.DefaultTableModel;
+
 import bd.Conexao;
 import modelo.ProvaModelo;
 
@@ -199,4 +201,38 @@ public class ProvaControle {
 					
 		}
 	
+		// Provas realizadas pelo aluno
+		public static DefaultTableModel provaAluno(int cogido) {
+			
+			//DefaultTableModel
+			DefaultTableModel dtm = new DefaultTableModel();
+			dtm.addColumn("Prova");
+			dtm.addColumn("Nota");
+			
+			// SQL
+			String sql = "SELECT provas.nomeProva, provasrealizadas.notaAluno FROM provas INNER JOIN provasrealizadas ON provas.codigoProva = provasrealizadas.codigoProva WHERE provasrealizadas.codigoAluno = ?";
+			
+			// Conexao
+			Conexao.iniciarConexao();
+			
+			// Tentativa
+			try {
+				PreparedStatement pstmt = Conexao.conexao.prepareStatement(sql);
+				pstmt.setInt(1, cogido);
+				
+				ResultSet rs = pstmt.executeQuery();
+					while(rs.next()){
+						dtm.addRow(new Object[]{rs.getString(1),rs.getInt(2)});
+					}
+						
+				
+			}catch(Exception erro){
+				System.out.println("Falha ao puxar as notas "+ erro.getMessage());
+			}finally {
+				Conexao.finalizarConexao();
+			}
+			
+			// Retorno
+			return dtm;
+		}
 }

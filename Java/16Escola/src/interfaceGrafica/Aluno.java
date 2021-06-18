@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import controle.ProvaControle;
 import modelo.UsuarioModelo;
 
 import javax.swing.JLabel;
@@ -55,15 +56,15 @@ public class Aluno extends JFrame {
 		btnSair.setBounds(341, 18, 85, 21);
 		contentPane.add(btnSair);
 		
-		DefaultTableModel dtm = new DefaultTableModel();
-		dtm.addColumn("Prova");
-		dtm.addColumn("Nota");
+		//DefaultTableModel dtm = new DefaultTableModel();
+		//dtm.addColumn("Prova");
+		//dtm.addColumn("Nota");
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 53, 416, 200);
 		contentPane.add(scrollPane);
 		
-		table = new JTable(dtm);
+		table = new JTable(ProvaControle.provaAluno(um.getCodigo()));
 		scrollPane.setViewportView(table);
 	}
 }
