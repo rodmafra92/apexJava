@@ -17,30 +17,28 @@
 
     <!-- JScript -->
     <script src="api.js"></script>
-
-</head>
-<body>
-    
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Front - API</a>
-
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            
+  </head>
+  <body>
+      
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+              <a class="navbar-brand" href="#">FRONT - API</a>
           </div>
-        </div>
-    </nav>
-
-    <main class="container">
-        <div class="row" id="lista"></div>
-
-        <div id="modais"></div>
-        
-    </main>
+      </nav>
+  
+      <main class="container">
+          <div class="row">
+              <div class="col-12">
+                  <form>
+                      <input type="text" placeholder="Qual Pokémon está procurando?" class="form-control" onkeyup="pesquisar(this.value)">
+                  </form>
+              </div>
+          </div>
+  
+          <div class="row" id="lista"></div> 
+          
+          <div id="modais"></div>
+      </main>
 
 
 

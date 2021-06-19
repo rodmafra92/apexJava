@@ -1,17 +1,21 @@
-// Após carregar todo o html e css
+
+ // JSON  local
+var pokemons = []
+
+// Variáveis globais
+var lista, modais;
+
+// Após carregar todo o HTML e CSS
 window.onload = function(){
 
-    // JSON  local
-    var pokemons = []
+// Obtendo o elemento Lista
+lista = document.getElementById("lista")
 
-    // Obtendo o elemento Lista
-    var lista = document.getElementById("lista")
+// Obter o local onde serão criados os modais
+modais = document.getElementById("modais")
 
-    // Obter o local onde serão criados os modais
-    var modais = document.getElementById("modais")
-
-    // Realizar uma consulta via API
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
+// Realizar uma consulta via API
+fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
     .then(dados => dados.json())
     .then(dados => pokemons = dados.results)
     .then(pokemons => {
@@ -41,13 +45,25 @@ window.onload = function(){
 
                             modal +='<div class="row">'
 
-                                modal += '<div class="col-md-6">'
+                                modal += '<div class="col-lg-3 col-md-6">'
                                     modal += '<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+(i+1)+'.png">'
+                                    modal+= '<p>Dianteira</p>'
                                 modal +='</div>'
                                
-                                modal += '<div class="col-md-6">'
+                                modal += '<div class="col-lg-3 col-md-6">'
                                     modal += '<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/'+(i+1)+'.png">'
+                                    modal+= '<p>Traseira</p>'
                                 modal +='</div>'
+
+                                modal+= '<div class="col-lg-3 col-6">'
+                                    modal+= '<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/'+(i+1)+'.png">'
+                                    modal+= '<p>Dianteira - Shining</p>'
+                                modal+= '</div>'
+
+                                modal+= '<div class="col-lg-3 col-6">'
+                                    modal+= '<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/'+(i+1)+'.png">'
+                                    modal+= '<p>Traseira - Shining</p>'
+                                modal+= '</div>'
 
                             modal +='</div>'
                         modal +='</div>'
@@ -57,5 +73,37 @@ window.onload = function(){
             modais.innerHTML += modal
         }
     })
+
+}
+
+
+// Função de pesquisar
+function pesquisar(texto){
+
+    // Limpar lista
+    lista.innerHTML = ""
+
+    // Filtrar
+    for(var i=0; i<pokemons.length; i++){
+
+        // Extrai o nome do JSON
+        var nomePokemon = pokemons[i].name;
+
+        // Caso não encontre aquele termo, retorna -1. Todos os nomes diferente de -1 serão exibidos
+        if(nomePokemon.indexOf(texto) != -1){
+       
+            // CARD
+            var linha = '<div class="col-xl-2 col-sm-4">'
+                    linha += '<a href="#" class="card" data-bs-toggle="modal" data-bs-target="#modal'+i+'">'
+                        linha += '<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+(i+1)+'.png">'
+                        linha += '<p>'+pokemons[i].name+'</p>'
+                        linha += '<button class="btn btn-secondary">Informações</button>'
+                    linha += '</a>'
+                linha += '</div>'
+
+            lista.innerHTML += linha
+          
+        }
+    }
 
 }
